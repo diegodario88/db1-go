@@ -6,9 +6,9 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+Projeto em desenvolvimento pela equipe DB1 no projeto DB1-GO UNIPAR.
 
-![](../header.png)
+![](../db1-go/header.png)
 
 ## Instalação
 
