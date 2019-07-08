@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import br.com.db1.db1go.domain.dto.StockValueDTO;
+
 @Document
 public class Stock {
 	@Id
@@ -14,6 +16,15 @@ public class Stock {
 	private BigDecimal startValue;
 	private BigDecimal endValue;
 	private LocalDate date;
+
+	public Stock(String name2, StockValueDTO value, LocalDate date2) {
+
+		this.name = name2;
+		this.startValue = value.getStart();
+		this.endValue = value.getEnd();
+		this.date = date2;
+
+	}
 
 	public String getId() {
 		return id;

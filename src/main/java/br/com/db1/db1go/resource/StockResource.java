@@ -18,15 +18,15 @@ public class StockResource {
 
 	@GetMapping("/api/v1/stock")
 	public List<StockDTO> getAll() {
-		
+
 		return stockService.getAll();
 
 	}
 
 	@PostMapping("/api/v1/stock")
-	public void save(@RequestBody StockDTO stock) {
-		System.out.println(stock.getName());
-		
+	public void save(@RequestBody List<StockDTO> stock) {
+		stockService.save(stock);
+
 	}
-	
+
 }
