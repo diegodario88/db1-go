@@ -23,6 +23,11 @@ public class StockResource {
 
 	}
 
+	@GetMapping("/api/v1/stock/count")
+	public long countAll() {
+		return stockService.countStock();
+	}
+	
 	@PostMapping("/api/v1/stock")
 	public void save(@RequestBody List<StockDTO> stock) {
 		stockService.save(stock);

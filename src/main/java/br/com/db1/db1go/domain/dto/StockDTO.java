@@ -12,10 +12,10 @@ public class StockDTO {
 	public StockDTO() {
 		super();
 	}
-	public StockDTO(String name, StockValueDTO value, LocalDate date) {
+	public StockDTO(String name, StockValueDTO stockValue, LocalDate date) {
 		super();
 		this.name = name;
-		this.value = value;
+		this.value = stockValue;
 		this.date = date;
 	}
 

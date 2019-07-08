@@ -18,13 +18,19 @@ public class StockService {
 	@Autowired
 	private StockRepository stockRepository;
 
+	//Get com CRUD findAll
 	public List<StockDTO> getAll() {
 		List<Stock> stocks = stockRepository.findAll();
 		List<StockDTO> stocksDTO = new StockAdapter().toDto(stocks);
 		return stocksDTO;
 
 	}
+	//Get com CRUD count
+	public long countStock() {
+		return stockRepository.count();
+	}
 
+	//Post com CRUD save
 	public void save(List<StockDTO> stockDto) {
 
 		List<Stock> stocksDTO = new StockAdapter().toStock(stockDto);
