@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import br.com.db1.db1go.domain.dto.StockValueDTO;
 
-@Document
+@Document(collection = "Stock")
 public class Stock {
 	@Id
 	private String id;
@@ -17,12 +17,17 @@ public class Stock {
 	private BigDecimal endValue;
 	private LocalDate date;
 
-	public Stock(String name2, StockValueDTO value, LocalDate date2) {
+	public Stock() {
+		super();
+	}
 
-		this.name = name2;
-		this.startValue = value.getStart();
-		this.endValue = value.getEnd();
-		this.date = date2;
+	public Stock(String name, StockValueDTO stockValue, LocalDate date) {
+
+		super();
+		this.name = name;
+		this.startValue = stockValue.getStart();
+		this.endValue = stockValue.getEnd();
+		this.date = date;
 
 	}
 
