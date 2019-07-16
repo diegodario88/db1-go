@@ -31,11 +31,8 @@ public class StockService {
 	}
 
 	//Post com CRUD save
-	public void save(List<StockDTO> stockDto) {
-
-		List<Stock> stocksDTO = new StockAdapter().toStock(stockDto);
-
-		stockRepository.saveAll(stocksDTO);
-
-	}
+	  public void save(StockDTO stockDTO) {
+	        Stock stock = new StockAdapter().toEntity(stockDTO);
+	        stockRepository.save(stock);
+	    }
 }
