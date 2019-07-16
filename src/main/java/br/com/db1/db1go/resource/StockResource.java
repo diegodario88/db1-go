@@ -28,10 +28,11 @@ public class StockResource {
 		return stockService.countStock();
 	}
 	
-	@PostMapping("/api/v1/stock")
-	public void save(@RequestBody List<StockDTO> stock) {
-		stockService.save(stock);
-
-	}
+	 @PostMapping("/api/v1/stock")
+	    public void save(@RequestBody StockDTO stock) {
+	        System.out.println(stock.getName());
+	        //TODO implements save stock
+	        stockService.save(stock);
+	    }
 
 }

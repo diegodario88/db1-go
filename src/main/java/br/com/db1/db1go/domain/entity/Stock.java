@@ -3,18 +3,25 @@ package br.com.db1.db1go.domain.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.db1.db1go.domain.dto.StockValueDTO;
 
-@Document(collection = "Stock")
+@Document(collection = "stock")
 public class Stock {
 	@Id
 	private String id;
+	@NotNull(message = "O campo nome é obrigatório")
 	private String name;
+	@NotNull(message = "O campo valor é obrigatório")
 	private BigDecimal startValue;
+	@NotNull(message = "O campo valor é obrigatório")
 	private BigDecimal endValue;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate date;
 
 	public Stock() {

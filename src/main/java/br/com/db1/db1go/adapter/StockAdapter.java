@@ -19,14 +19,15 @@ public class StockAdapter {
 		}).collect(Collectors.toList());
 	}
 
-	public List<Stock> toStock(List<StockDTO> stockDTO) {
+	 public Stock toEntity(StockDTO stockDTO) {
+	        Stock stock = new Stock();
+	        stock.setName(stockDTO.getName());
+	        stock.setDate(stockDTO.getDate());
+	        stock.setStartValue(stockDTO.getValue().getStart());
+	        stock.setEndValue(stockDTO.getValue().getEnd());
+	        return stock;
+	    }
 
-		return stockDTO.stream().map(s -> {
-			StockValueDTO stockValue = new StockValueDTO(s.getValue().getStart(), s.getValue().getEnd());
-			Stock stock = new Stock(s.getName(), stockValue, s.getDate());
-			return stock;
 
-		}).collect(Collectors.toList());
-	}
 
 }
